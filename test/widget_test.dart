@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:test_project/counter.dart';
 
 import 'package:test_project/main.dart';
 
@@ -27,4 +28,20 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+  test('Counter value should be incremented', () {
+    final counter = Counter();
+
+    counter.increment();
+
+    expect(counter.value, 1);
+  });
+  test('Counter value should be decremented', () {
+    final counter = Counter();
+
+    counter.decrement();
+
+    expect(counter.value, -1);
+  });
+
+
 }
